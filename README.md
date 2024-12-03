@@ -39,4 +39,23 @@ cd backend
 ./mvnw spring-boot:run
 ```
 
+### Build the application
 
+Create the `.env` file and put the environment variable with your values:
+
+```
+DB_USERNAME
+DB_PASSWORD
+```
+
+After setting up your environment, up the docker container:
+
+```sh
+  $ make compose-up
+```
+
+### Run the application
+
+```sh
+  $ make run
+```
