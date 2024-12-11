@@ -1,17 +1,19 @@
-version: '3.8'
+version: '3.1'
 
 services:
 
-  mysql:
-    image: mysql:5.7
-    container_name: mysql
-    restart: always
+  postgres:
+    image: postgres:16.1
+    container_name: postgres
     ports:
-      - "3307:3306"
+      - 5432:5432
     environment:
-      MYSQL_DATABASE: cars
-      MYSQL_USER: ${DB_USERNAME}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-
-    volumes:
-      - ./mysql:/var/lib/mysql
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=cars
+    restart: always
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "$cars"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
