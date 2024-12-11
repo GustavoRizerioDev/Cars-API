@@ -1,6 +1,5 @@
-
 create table Car(
-	id int auto_increment,
+ 	id int GENERATED ALWAYS AS IDENTITY,
     nome varchar(200),
     marca varchar(100),
     preco int,
