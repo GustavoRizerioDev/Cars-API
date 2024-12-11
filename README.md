@@ -1,29 +1,17 @@
 # Cars-API
-Repositoriodo projeto de estudos, feito com java spring
+Repositoriodo projeto de estudos, feito com java spring boot e postgres.
 
 ## Tecnologias Utilizadas
 
 - **Java 21**: Linguagem de programação utilizada.
 - **Spring Boot**: Framework para desenvolvimento rápido e simplificado.
 - **Maven**: Gerenciador de dependências.
-- **MySQL**: Banco de dados relacional utilizado.
-- **JUnit**: Framework para testes unitários.
-## Configuração no application.properties
-```bash
-spring.application.name=cars
-spring.datasource.url=jdbc:mysql://localhost:3306/carrosdb
-spring.datasource.username=seu_usuario
-spring.datasource.password=sua_senha
-```
-## Criando o banco de dados:
-### Acesse o MySQL:
-```bash
-mysql -u seu_usuario -p
-```
-### Crie o banco de dados:
-```bash
-CREATE DATABASE carrosdb;
-```
+- **Postgres**: Banco de dados relacional.
+- **Docker**: Plataforma para desenvolvimento, envio e execução de aplicações em containers.
+- **Docker Compose**: Ferramenta para definir e executar aplicativos Docker multi-container.
+- **Flyway**: Controle de versão para banco de dados.
+- **Lombok**: Biblioteca Java que ajuda a reduzir a verbosidade do código-fonte.
+
 ## Como Rodar o Projeto
 ### Clone o repositório:
 ```bash
@@ -51,11 +39,5 @@ DB_PASSWORD
 After setting up your environment, up the docker container:
 
 ```sh
-  $ make compose-up
-```
-
-### Run the application
-
-```sh
-  $ make run
+docker compose-up
 ```
