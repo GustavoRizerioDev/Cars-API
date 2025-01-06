@@ -10,6 +10,7 @@ public class CarMapper {
 
     public static Cars toDomain(CarsDto carsDto){
         return Cars.builder()
+                .id(carsDto.getId())
                 .marca(carsDto.getMarca())
                 .preco(Integer.valueOf(carsDto.getPreco()))
                 .nome(carsDto.getNome())
@@ -18,6 +19,7 @@ public class CarMapper {
 
     public static CarsDto toDto(Cars cars){
         return CarsDto.builder()
+                .id(cars.getId())
                 .marca(cars.getMarca())
                 .preco(cars.getPreco())
                 .nome(cars.getNome())
