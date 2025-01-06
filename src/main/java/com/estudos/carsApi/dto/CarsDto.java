@@ -7,6 +7,9 @@ import lombok.Getter;
 @Getter
 @Builder
 public class CarsDto {
+    @JsonProperty("id")
+    private Long id;
+
     @JsonProperty("nome")
     private String nome;
 
