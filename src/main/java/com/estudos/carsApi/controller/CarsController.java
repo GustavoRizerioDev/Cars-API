@@ -61,12 +61,21 @@ public class CarsController {
         }
     }
 
-
     @DeleteMapping("/cars/{carId}")
     public ResponseEntity<Object> deleteCarById(@PathVariable Long carId){
         try {
             carService.deleteCarById(carId);
             return ResponseEntity.noContent().build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    @PutMapping("/cars/{carId}")
+    public ResponseEntity<Object> updateCar(@PathVariable Long carId, @RequestBody CarsDto carDto){
+        try {
+            var carToReturn = carService.updateCar(carId, carDto);
+            return ResponseEntity.ok(carToReturn);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
