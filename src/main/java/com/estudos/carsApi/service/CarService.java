@@ -61,4 +61,25 @@ public class CarService {
             throw new FindCarException(dae.getMessage());
         }
     }
+
+    public CarsDto updateCar(Long carId, CarsDto carsDto) {
+        try {
+            var persistedCar = carsRepository.findById(carId);
+
+            if (persistedCar.isEmpty()) {
+                throw new CarNotFoundException("Registro não existe no banco de dados");
+            }
+
+            Cars carToUpdate = persistedCar.get();
+            carToUpdate.setNome(carsDto.getNome());
+            carToUpdate.setMarca(carsDto.getMarca());
+            carToUpdate.setPreco(carsDto.getPreco());
+
+            Cars updatedCar = carsRepository.save(carToUpdate);
+            return CarMapper.toDto(updatedCar);
+        } catch (DataAccessException dae) {
+            log.error("Error to update on database! Error: {}", dae.getMessage());
+            throw new FindCarException(dae.getMessage());
+        }
+    }
 }
