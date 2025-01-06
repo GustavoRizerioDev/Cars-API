@@ -12,18 +12,20 @@ import lombok.*;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Cars {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
+    @Setter
     @Column(name = "nome")
     private String nome;
 
+    @Setter
     @Column(name = "marca")
     private String marca;
 
+    @Setter
     @Column(name = "preco")
     private Integer preco;
 
@@ -32,4 +34,5 @@ public class Cars {
         this.preco = data.preco();
         this.nome = data.nome();
     }
+
 }
