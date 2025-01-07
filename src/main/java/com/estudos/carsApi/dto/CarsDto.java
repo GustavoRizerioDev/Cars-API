@@ -18,4 +18,22 @@ public class CarsDto {
 
     @JsonProperty("preco")
     private Integer preco;
+
+    @JsonProperty("ano")
+    private Integer ano;
+
+    @JsonProperty("cor")
+    private String cor;
+
+    @JsonProperty("modelo")
+    private String modelo;
+
+    @JsonProperty("quilometragem")
+    private Integer quilometragem;
+
+    @JsonProperty("portas")
+    private Integer portas;
+
+    @JsonProperty("finalPlaca")
+    private Integer finalPlaca;
 }

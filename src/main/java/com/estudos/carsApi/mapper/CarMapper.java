@@ -14,6 +14,12 @@ public class CarMapper {
                 .marca(carsDto.getMarca())
                 .preco(Integer.valueOf(carsDto.getPreco()))
                 .nome(carsDto.getNome())
+                .ano(Integer.valueOf(carsDto.getAno()))
+                .cor(carsDto.getCor())
+                .modelo(carsDto.getModelo())
+                .quilometragem(Integer.valueOf(carsDto.getQuilometragem()))
+                .portas(Integer.valueOf(carsDto.getPortas()))
+                .finalPlaca(Integer.valueOf(carsDto.getFinalPlaca()))
                 .build();
     }
 
@@ -23,6 +29,12 @@ public class CarMapper {
                 .marca(cars.getMarca())
                 .preco(cars.getPreco())
                 .nome(cars.getNome())
+                .ano(cars.getAno())
+                .cor(cars.getCor())
+                .modelo(cars.getModelo())
+                .quilometragem(cars.getQuilometragem())
+                .portas(cars.getPortas())
+                .finalPlaca(cars.getFinalPlaca())
                 .build();
     }
 }
